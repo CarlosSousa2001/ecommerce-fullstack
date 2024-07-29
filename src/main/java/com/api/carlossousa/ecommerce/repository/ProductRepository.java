@@ -14,13 +14,13 @@ import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    @Query("SELECT new com.api.store.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
+    @Query("SELECT new com.api.carlossousa.ecommerce.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
             "p.price, p.quantity, p.photoUrl, d) " +
             "FROM Product p LEFT JOIN p.deal d")
     List<ProductMinDTO> findAllProductMinDTOs();
 
     // Todos os produtos com promoção
-    @Query("SELECT new com.api.store.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
+    @Query("SELECT new com.api.carlossousa.ecommerce.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
             "p.price, p.quantity, p.photoUrl, d) " +
             "FROM Product p INNER JOIN p.deal d")
     Page<ProductMinDTO> findAllDealOfTheDay(Pageable pageable);
@@ -30,7 +30,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     Optional<Product> findByIdWithDetails(@Param("id") Long id);
 
     // Busca páginada pelo nome e pela categoria, casa o parametro de categoria não seja passado a query vai ignorar
-    @Query("SELECT new com.api.store.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
+    @Query("SELECT new com.api.carlossousa.ecommerce.model.product.ProductMinDTO(p.id, p.title, p.shortDescription, " +
             "p.price, p.quantity, p.photoUrl, d) " +
             "FROM Product p " +
             "LEFT JOIN p.deal d " +
