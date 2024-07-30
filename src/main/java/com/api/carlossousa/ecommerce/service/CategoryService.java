@@ -35,6 +35,7 @@ public class CategoryService {
         if(categoryOptional.isEmpty()){
             throw new EntityNotFoundException();
         }
+
         return new CategoryDTO(categoryOptional.get().getId(), categoryOptional.get().getCategory());
     }
 
