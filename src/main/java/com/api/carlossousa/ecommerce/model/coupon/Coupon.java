@@ -12,8 +12,9 @@ import java.util.Objects;
 public class Coupon {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "code", unique = true, nullable = false)
+    @Size(max = 20)
+    private String code;
 
     @Min(0)
     @Max(100)
@@ -31,19 +32,19 @@ public class Coupon {
     public Coupon() {
     }
 
-    public Coupon(Long id, Integer percentage, LocalDate expiryDate, String description) {
-        this.id = id;
+    public Coupon(String code, Integer percentage, LocalDate expiryDate, String description) {
+        this.code = code;
         this.percentage = percentage;
         this.expiryDate = expiryDate;
         this.description = description;
     }
 
-    public Long getId() {
-        return id;
+    public String getCode() {
+        return code;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public Integer getPercentage() {
@@ -75,11 +76,11 @@ public class Coupon {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Coupon coupon = (Coupon) o;
-        return Objects.equals(id, coupon.id);
+        return Objects.equals(code, coupon.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(code);
     }
 }
