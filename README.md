@@ -19,9 +19,10 @@ Bem-vindo ao projeto de E-commerce Full Stack! Este repositório contém um proj
 
 Este projeto de e-commerce é desenvolvido para fornecer uma experiência robusta e escalável para os usuários. O backend é construído com Java 17 e Spring Boot 3, garantindo desempenho e segurança. A infraestrutura é gerenciada com Docker e AWS, enquanto o banco de dados relacional utilizado é o PostgreSQL. No frontend, utilizamos Next.js para criar uma interface de usuário dinâmica e responsiva.
 
-## Estrutura do Projeto - v1 29/07/2024
+## Estrutura do Projeto - v3 30/07/2024
 
-![diagramaecomerce](https://github.com/user-attachments/assets/60a852f1-de7e-48b8-a008-88c208cacd22)
+![diav3store](https://github.com/user-attachments/assets/6b1da0af-4464-4760-bd0b-c9f4e7eebf97)
+
 
 ## Funcionalidades Principais
 
