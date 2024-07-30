@@ -2,6 +2,7 @@ package com.api.carlossousa.ecommerce.controller;
 
 import com.api.carlossousa.ecommerce.model.product.ProductDetailsDTO;
 import com.api.carlossousa.ecommerce.model.product.ProductMinDTO;
+import com.api.carlossousa.ecommerce.model.product.ProductRequestDTO;
 import com.api.carlossousa.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -36,5 +37,11 @@ public class ProductController {
         Page<ProductMinDTO> productMinDTOS = productService.findAllProducts(name, category, pageable);
 
         return ResponseEntity.ok(productMinDTOS);
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ProductDetailsDTO createProduct(@RequestBody ProductRequestDTO dto){
+        return productService.createProduct(dto);
     }
 }
